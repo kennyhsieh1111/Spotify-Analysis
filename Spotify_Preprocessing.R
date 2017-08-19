@@ -1,5 +1,3 @@
-rm(list=ls())
-
 #install.packages('Rspotify')
 library('Rspotify')
 source('Expansion.R')
@@ -35,6 +33,11 @@ features <- as.data.frame(do.call(rbind, Map(function(x){
   getFeatures_own(features_id[x], token=keys)
 }, 1:length(features_id))))
 
-# Aug 19
-##save.image('Songs+Features.RData')
+# Binding Songs & Features with id, remove repeat songs & useless variable
+# Final Preprocessing 892 obs 
+data <- merge(songs, features, by = "id")
+data <- unique(data)
+data <- data[, !(colnames(data) %in% c("artistId", "uri", "analysis_url"))]
 
+# Aug 20
+save.image('SongsData.RData')

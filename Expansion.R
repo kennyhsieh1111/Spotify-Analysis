@@ -1,4 +1,4 @@
-# 函式：調整 getFeatures 內 json1 輸出格式，以便高維處理
+# Function：Preprocessing, Revise getFeatures func json1 output format in order to manipulate in high-dim.
 getFeatures_own <- function(spotify_ID,token){
   print(spotify_ID)
   req <- httr::GET(paste0("https://api.spotify.com/v1/audio-features/",spotify_ID), httr::config(token = token))
@@ -22,3 +22,5 @@ getFeatures_own <- function(spotify_ID,token){
   Sys.sleep(0.1)
   return(dados)
 }
+
+
