@@ -4,7 +4,7 @@ load('SongsData.RData')
 library(highcharter)
 library(RColorBrewer)
 library(shiny)
-library(htmlwidgets)
+
 
 # Clustering
 # Preprocessing before kmeans (Normalization)
@@ -71,3 +71,5 @@ clus_result <- hchart(hplot, hcaes(x = PC1, y = PC2, group = cluster), type = 's
 
 htmlwidgets::saveWidget(widget = clus_result, file = "Clustering_result.html")
 
+
+hchart(princomp(feature_data, cor = TRUE))

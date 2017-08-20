@@ -9,20 +9,21 @@
 ## Exploratary Data Analysis
 - _Aug 20_
 - Choose Own Spotify Playlist - Singles, to Implement Analysis
-- The Mean Value of Features
-- The Std Value of Features
+- Observe the Mean & Std Value of Tracks' Features
 - Create an Equation to Measure the boringness of playlist
+> Boring Scores = Lsoudness + Tempo + (Danceability + Energy)*100
+- Confirm there is no Linear Relation between Energy & Danceability
 
-> Boring Idx = Lsoudness + Tempo + (Danceability + Energy)*100
-
-- The Linear Relation between Energy & Danceability
-
-## Cluster
+## Cluster & PCA
 - _Aug 20_
 - **Nbclust**, provides Ref to Decide how many Clusters to Divide (Opt : 2 clusters in this case)
+- **PCA**, to reduce the dimensionality for plotting result
+- Seems useless now, remain explained :(
+
+## Sentiment Quandrant
+- xAxis = Valence, yAxis = Energy
 
 ## Next Step
-- Features Quandrant
 - R Shiny Interface
 
 ## Reference
@@ -31,6 +32,6 @@
 - [Rspotify](https://github.com/tiagomendesdantas/Rspotify)
 - [SongMood: Lyric Sentiment Anaylsis](https://github.com/hlilje/songmood)
 ### Article
-- [fitteR happieR](http://rcharlie.com/2017-02-16-fitteR-happieR/)
+- [RCharlie : fitteR happieR](http://rcharlie.com/2017-02-16-fitteR-happieR/)
+- [RCharlie : CoachellaR](http://rcharlie.com/2017-04-13-Coachella/)
 - [An analysis involving music, data, and machine learning](https://medium.com/towards-data-science/is-my-spotify-music-boring-an-analysis-involving-music-data-and-machine-learning-47550ae931de)
-
