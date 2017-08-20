@@ -1,8 +1,3 @@
-# http://rcharlie.com/2017-02-16-fitteR-happieR/
-# https://developer.spotify.com/web-api/get-playlists-tracks/
-# https://github.com/tiagomendesdantas/Rspotify
-# https://medium.com/towards-data-science/is-my-spotify-music-boring-an-analysis-involving-music-data-and-machine-learning-47550ae931de
-# https://github.com/hlilje/songmood
 rm(list = ls())
 
 library('Rspotify')

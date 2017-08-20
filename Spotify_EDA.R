@@ -2,6 +2,9 @@
 load('SongsData.RData')
 
 # Exploratary Data Analysis
+library(ggplot2)
+library(highcharter)
+library(dplyr)
 summary(data)
 
 # Observe the features of songs
@@ -23,3 +26,13 @@ boring <- data[, c(6,7,9,16)]
 boring['score'] <- (boring[1] + boring[2])*100 + boring[3] + boring[4]
 ggplot(data = boring, aes(score)) + geom_histogram(fill = "#17B3B7")
 mean(boring[, 5])
+
+# Observe the Linear Relation between Energy & Danceability
+hyper <- data[, c(2,6:7)]
+hchart(hyper, "scatter", hcaes(x = energy, y = danceability)) %>%
+  hc_add_theme(hc_theme_economist()) %>%
+  hc_title(text = "The Correlation between Energy & Danceability") %>%
+  hc_tooltip(headerFormat = "", valueDecimals=2, borderWidth=2,
+             hideDelay=100, useHTML=T, padding=10,
+             pointFormat="<b>{point.tracks}</b><br><b>Energy :</b> {point.energy}<br><b>Danceability :</b> {point.danceability}")
+  
