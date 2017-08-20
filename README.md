@@ -12,15 +12,18 @@
 - The Mean Value of Features
 - The Std Value of Features
 - Create an Equation to Measure the boringness of playlist
-    > Loudness + Tempo + (Danceability + Energy)*100
+
+> Boring Idx = Lsoudness + Tempo + (Danceability + Energy)*100
+
 - The Linear Relation between Energy & Danceability
 
 ## Cluster
+- _Aug 20_
 - **Nbclust**, provides Ref to Decide how many Clusters to Divide (Opt : 2 clusters in this case)
-- 
 
 ## Next Step
 - Features Quandrant
+- R Shiny Interface
 
 ## Reference
 ### Develop Package

@@ -20,14 +20,17 @@ ggplot(data = features_std, aes(x = reorder(features, -std), y = std)) + geom_ba
   ggtitle("Std value of the song features of Singles") + xlab('features')
 mean(features_std[,2]); sum(features_std[,2])
 
-# Boring Equation = loudness + tempo + (energy*100) + (danceability*100)
+# Boring Equation = Loudness + Tempo + (Energy + Danceability)*100
 ## The lowest the score is, the more boring the song is.
 boring <- data[, c(6,7,9,16)]
 boring['score'] <- (boring[1] + boring[2])*100 + boring[3] + boring[4]
-ggplot(data = boring, aes(score)) + geom_histogram(fill = "#17B3B7")
+ggplot(data = boring, aes(score)) + geom_histogram(fill = "#17B3B7") +
+  labs(x = 'Boring Scores', y = 'Count',
+       title = 'Boring Score of Singles Playlist', subtitle = 'Loudness + Tempo + (Energy + Danceability)*100')
 mean(boring[, 5])
 
 # Observe the Linear Relation between Energy & Danceability
+## There is no linear relation
 hyper <- data[, c(2,6:7)]
 hchart(hyper, "scatter", hcaes(x = energy, y = danceability)) %>%
   hc_add_theme(hc_theme_economist()) %>%
